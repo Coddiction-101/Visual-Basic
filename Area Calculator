@@ -1,0 +1,18 @@
+Module Module1
+    Sub Main()
+        Console.Write("Enter Length: ")
+        Dim Length As Double = Convert.ToDouble(Console.ReadLine())
+
+        Console.Write("Enter Width: ")
+        Dim Width As Double = Convert.ToDouble(Console.ReadLine())
+
+        Dim area As Double = Length * Width
+        Dim perimeter As Double = 2 * (Length + Width)
+
+        Console.WriteLine("Area: " & area)
+        Console.WriteLine("Perimeter: " & perimeter)
+
+        Console.ReadLine()
+
+    End Sub
+End Module
