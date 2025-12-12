@@ -1,0 +1,23 @@
+ Module Module1
+    Sub Main()
+        Console.WriteLine("--------Simple Calculator---------------")
+        
+        Console.Write("Enter First Number: ")
+        Dim num1 As Double = Convert.ToDouble(Console.ReadLine())
+        
+        Console.Write("Enter Second Number: ")
+        Dim num2 As Double = Convert.ToDouble(Console.ReadLine())
+        
+        Dim sum As Double = num1 + num2
+        Dim diff As Double = num1 - num2
+        Dim prod As Double = num1 * num2
+        Dim div As Double = num1 / num2
+        
+        Console.WriteLine("sum: " & sum)
+        Console.WriteLine("difference: " & diff)
+        Console.WriteLine("product: " & prod)
+        Console.WriteLine("division: " & div)
+        
+        Console.ReadLine()
+    End Sub
+End Module
