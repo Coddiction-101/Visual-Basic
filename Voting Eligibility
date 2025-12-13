@@ -1,0 +1,15 @@
+Module Module1
+    Sub Main()
+        Console.Write("enter age: ")
+        Dim age As Integer = Convert.ToInt32(Console.ReadLine())
+
+        If age >= 18 Then
+            Console.WriteLine("You are eligible to vote.")
+        Else
+            Dim yearLleft As Integer = 18 - age
+            Console.WriteLine("You are not elgiible to vote yet. Wait " & yearLleft & " years more.")
+        End If
+        Console.ReadLine()
+
+    End Sub
+End Module
