@@ -1,0 +1,40 @@
+Module Module1
+    Sub Main()
+        Console.Write("enter first number: ")
+        Dim num1 As Double = Convert.ToDouble(Console.ReadLine())
+
+        Console.Write("enter operator | + - * / : ")
+        Dim op As String = Console.ReadLine()
+
+        Console.Write("enter second number: ")
+        Dim num2 As Double = Convert.ToDouble(Console.ReadLine())
+
+        Console.WriteLine("----------------------------------------")
+        Dim Result As Double
+
+        Select Case op
+            Case "+"
+                Result = num1 + num2
+                Console.WriteLine("result: " & Result)
+            Case "-"
+                Result = num1 - num2
+                Console.WriteLine("result: " & Result)
+            Case "*"
+                Result = num1 * num2
+                Console.WriteLine("result: " & Result)
+            Case "/"
+                If num2 <> 0 Then
+                    Result = num1 / num2
+                    Console.WriteLine("result: " & Result)
+                Else
+                    Console.WriteLine("Error: Division by zero.")
+                End If
+            Case Else
+                Console.WriteLine("Invalid Operator")
+        End Select
+
+        Console.ReadLine()
+
+
+    End Sub
+End Module
