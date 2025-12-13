@@ -1,0 +1,15 @@
+Module Module1
+    Sub Main()
+        Console.Write("enter a number: ")
+        Dim num As Integer = Convert.ToInt32(Console.ReadLine())
+
+        Console.WriteLine("Muptiplication table of " & num)
+        Console.WriteLine("______________________________")
+
+        For i As Integer = 1 To 10
+            Console.WriteLine(num & " x " & i & " = " & (num * i))
+        Next
+        Console.ReadLine()
+
+    End Sub
+End Module
