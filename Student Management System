@@ -1,0 +1,65 @@
+ 
+Module Module1
+    Sub Main()
+        Dim choice As Integer
+        Do
+            Console.WriteLine("................... Student Management System...................")
+            Console.WriteLine("1. Calculate Percentages.")
+            Console.WriteLine("2. Check Grades.")
+            Console.WriteLine("3. Display All Subjects Marks.")
+            Console.WriteLine("4. Exit")
+            Console.WriteLine("..................................................................")
+            Console.WriteLine("Enter your choice: ")
+            choice = Convert.ToInt32(Console.ReadLine())
+
+            Select Case choice
+                Case 1
+                    Console.Write("Enter marks in 5 subjects: ")
+                    Dim total As Integer = 0
+                    For i As Integer = 1 To 5
+                        Console.Write("Subjects " & i & ": ")
+                        Dim marks As Integer = Convert.ToInt32(Console.ReadLine())
+                        total = total + marks
+                    Next
+                    Dim percentage As Double = total / 5
+                    Console.WriteLine("Percentages: " & percentage & "%")
+
+                Case 2
+                    Console.Write("Enter marks: ")
+                    Dim marks As Integer = Convert.ToInt32(Console.ReadLine())
+
+                    If marks >= 90 Then
+                        Console.WriteLine("Grade: A+")
+                    ElseIf marks >= 80 Then
+                        Console.WriteLine("Grade: B")
+                    ElseIf marks >= 70 Then
+                        Console.WriteLine("Grade: C")
+                    ElseIf marks >= 60 Then
+                        Console.WriteLine("Grade: D")
+                    Else
+                        Console.WriteLine("Grade: F")
+                    End If
+
+                Case 3
+                    Console.Write("Enter marks for 5 subjects.")
+                    For i As Integer = 1 To 5
+                        Console.Write("Subject: " & i & ": ")
+                        Dim marks As Integer = Convert.ToInt32(Console.ReadLine())
+                        Console.WriteLine("marks: " & marks)
+                    Next
+
+                Case 4
+                    Console.WriteLine("Exiting.......")
+
+                Case Else
+                    Console.WriteLine("Invalid Choice.")
+            End Select
+
+            Console.WriteLine()
+
+        Loop While choice <> 4
+
+        Console.ReadLine()
+
+    End Sub
+End Module
