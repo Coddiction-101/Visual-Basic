@@ -1,0 +1,56 @@
+Module Module1
+    Sub Main()
+        Dim choice As Integer
+
+        Do
+            Console.Write("1. Addition: ")
+            Console.WriteLine()
+            Console.Write("2. Subtraction: ")
+            Console.WriteLine()
+            Console.Write("3. Muptiplicaton: ")
+            Console.WriteLine()
+            Console.Write("4. Division: ")
+            Console.WriteLine()
+            Console.Write("5. Exit")
+            Console.WriteLine()
+            Console.WriteLine("-------------------------------------------")
+
+            Console.Write("Enter you choice: ")
+            choice = Convert.ToInt32(Console.ReadLine())
+
+            If choice >= 1 And choice <= 4 Then
+                Console.Write("enter first number: ")
+                Dim num1 As Double = Convert.ToDouble(Console.ReadLine())
+
+                Console.Write("enter second number: ")
+                Dim num2 As Double = Convert.ToDouble(Console.ReadLine())
+
+                Console.WriteLine("-------------------------------------------")
+
+                Select Case choice
+                    Case 1
+                        Console.WriteLine("result: " & (num1 + num2))
+                    Case 2
+                        Console.WriteLine("result: " & (num1 - num2))
+                    Case 3
+                        Console.WriteLine("result: " & (num1 * num2))
+                    Case 4
+                        If num2 <> 0 Then
+                            Console.WriteLine("result: " & (num1 / num2))
+                        Else
+                            Console.WriteLine("Error: Divide by zero is invalid.")
+                        End If
+                End Select
+                Console.WriteLine("-------------------------------------------")
+
+            ElseIf choice = 5 Then
+                Console.WriteLine("Thank you1 Goodbye.")
+            Else
+                Console.WriteLine("Invalid choice")
+            End If
+            Console.WriteLine()
+        Loop While choice <> 5
+
+        Console.ReadLine()
+    End Sub
+End Module
