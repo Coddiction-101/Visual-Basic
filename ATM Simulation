@@ -1,0 +1,81 @@
+Module Module1
+    Sub Main()
+        Dim balance As Double = 1000
+        Dim choice As Integer
+        Dim pin As Integer = 1234
+
+        Console.Write("enter pin: ")
+        Dim enteredPin As Integer = Convert.ToInt32(Console.ReadLine())
+
+
+        If enteredPin <> pin Then
+            Console.WriteLine("Wrong PIN! Access Denied!")
+            Console.ReadLine()
+            Exit Sub
+        End If
+
+
+        Console.WriteLine("PIN Correct! Welcome...")
+
+        Do
+
+
+            Console.WriteLine()
+
+
+            Console.WriteLine("...... ATM Menu .......")
+            Console.WriteLine("1. Check Balance")
+            Console.WriteLine("2. Withdraw money")
+            Console.WriteLine("3. Deposit money")
+            Console.WriteLine("4. Exit")
+
+            Console.WriteLine()
+
+            Console.Write("enter your choice: ")
+            choice = Convert.ToInt32(Console.ReadLine())
+
+            Select Case choice
+                Case 1
+                    Console.WriteLine("Current Balance: Rs." & balance)
+
+                Case 2
+                    Console.Write("Enter amount to withdraw: ")
+                    Dim amount As Double = Convert.ToDouble(Console.ReadLine())
+
+                    If amount > balance Then
+                        Console.WriteLine("Insufficient Balance")
+                    ElseIf amount < 0 Then
+                        Console.WriteLine("Invalid amount.")
+                    Else
+                        balance = balance - amount
+                        Console.WriteLine("Withdraw Successfull.")
+                        Console.WriteLine()
+                        Console.WriteLine("Remaining Balance: Rs." & balance)
+
+                    End If
+                Case 3
+                    Console.WriteLine("enter amount to deposit: ")
+                    Dim amount As Double = Convert.ToDouble(Console.ReadLine())
+
+                    If amount < 0 Then
+                        Console.WriteLine("Invalid amount.")
+                    Else
+                        balance = balance + amount
+                        Console.WriteLine("deposit successfull!")
+                        Console.WriteLine()
+                        Console.WriteLine("New Balance: Rs. " & balance)
+
+                    End If
+
+
+                Case 4
+                    Console.WriteLine("Thank You! Visit Again.")
+                Case Else
+                    Console.WriteLine("Invalid Choice.")
+            End Select
+
+        Loop While choice <> 4
+
+        Console.ReadLine()
+    End Sub
+End Module
